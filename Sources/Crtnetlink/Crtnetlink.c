@@ -102,6 +102,7 @@ int get_interface_dump_response(int sock, void(^hndlr)(struct nlmsghdr *)) {
 	struct nlmsghdr *h = (struct nlmsghdr*)buf;
 	int msglen = status;
 	while (NLMSG_OK(h, msglen)) {
+		printf("\tok got interface dump thing....\n");
 		if (h->nlmsg_flags & NLM_F_DUMP_INTR) {
 			free(buf);
 			return -1;
