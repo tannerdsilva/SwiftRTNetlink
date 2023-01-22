@@ -13,8 +13,8 @@ fileprivate func makeLogger(label:String) -> Logger {
 }
 
 public enum AddressFamily:UInt8, Codable {
-	public case v4 = 4
-	public case v6 = 6
+	case v4 = 4
+	case v6 = 6
 	
 	public init(from decoder:Decoder) throws {
 		var container = try decoder.singleValueContainer()
